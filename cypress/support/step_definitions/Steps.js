@@ -1,3 +1,10 @@
+import {
+  defineStep as And,
+  Given,
+  When,
+  Then,
+} from "@badeball/cypress-cucumber-preprocessor";
+
 import LoginPage from "../pages/LoginPage";
 const loginPage = new LoginPage();
 
@@ -26,18 +33,15 @@ Then("devo visualizar a seguinte erro {}", (mensagemErroLogin) => {
   cy.get(".toaster").should("be.visible").and("contain", mensagemErroLogin);
 });
 
-Then("devo visualizar a seguinte erro {}", (mensagemErroLogin) => {
-  cy.get(".toaster").should("be.visible").and("contain", mensagemErroLogin);
-});
-
-Then("devo visualizar o seguinte erro de campos vazios {}", (mensagemErroLogin) => {
-  cy.get(".form-fields").should("be.visible").and("contain", mensagemErroLogin);
-});
-
+Then(
+  "devo visualizar o seguinte erro de campos vazios {}",
+  (mensagemErroLogin) => {
+    cy.get(".form-fields")
+      .should("be.visible")
+      .and("contain", mensagemErroLogin);
+  },
+);
 
 When("faço login com email {} e senha {}", (user, password) => {
   loginPage.login(user, password);
 });
-
-
-

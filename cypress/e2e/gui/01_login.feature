@@ -24,7 +24,6 @@ Feature: Fluxo de Login
             | formato@errado1         | ApenasSenha    | Your email and password both are invalid! |
 
 
-
     Scenario Outline: CT_003# Login sem sucesso com campos email/senha vazios
         When efetuo login com <user> e <password>
         Then devo visualizar o seguinte erro de campos vazios <mensagemErroLogin>
@@ -33,4 +32,3 @@ Feature: Fluxo de Login
             | user                    | password    | mensagemErroLogin            |
             | vazio                   | ApenasSenha | Email is a required field    |
             | qa_testers@qabrains.com | vazio       | Password is a required field |
-
