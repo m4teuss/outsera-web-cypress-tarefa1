@@ -67,4 +67,4 @@ outsera-web-cypress-tarefa1
 
 ### Relatórios de Teste
 - Após a execução dos testes, são gerados arquivos de resultado em:
-- `cypress/cucumber-json`
+- `reports/cucumber-report.json`
